@@ -8,7 +8,7 @@ export abstract class BaseService {
 		if(response.status < 200 || response.status >= 300) {
 			throw(new Error("Bad response status: " + response.status))
 		}
-		return(json.data);
+		return(response.json());
 	}
 
 	protected handleError(error:any) {
